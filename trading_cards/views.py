@@ -5,7 +5,8 @@ from django.core.files.storage import FileSystemStorage
 from django.shortcuts import redirect
 import subprocess
 import os
-import secrets
+import base64
+import uuid
 
 from .forms import *
 
@@ -30,7 +31,7 @@ class DefaultFormsetView(FormView):
 
     def form_valid(self, form):
         # Create new directory to store output
-        directory = tempfile.mkdtemp(prefix=secrets.token_urlsafe(),
+        directory = tempfile.mkdtemp(prefix=base64.urlsafe_b64encode(uuid.uuid4().bytes).replace('=', ''),
                                      dir=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'output'))
         d = form.cleaned_data
         p = subprocess.Popen(["pdflatex",
