@@ -1,0 +1,189 @@
+\documentclass[]{article}
+\usepackage{MyriadPro}
+
+\usepackage{calc}
+
+
+\usepackage{lmodern}
+\usepackage{environ}% http://ctan.org/pkg/environ
+\usepackage{lipsum}% http://ctan.org/pkg/lipsum
+\newdimen\fontdim
+\newdimen\upperfontdim
+\newdimen\lowerfontdim
+\newif\ifmoreiterations
+\fontdim12pt
+
+\makeatletter
+\NewEnviron{fitbox}[2]{% \begin{fitbox}{<width>}{<height>} stuff \end{fitbox}
+	\def\buildbox{%
+		\setbox0\vbox{\hbox{\minipage{#1}%
+				\fontsize{\fontdim}{1.2\fontdim}%
+				\selectfont%
+				\stuff%
+				\endminipage}}%
+		\dimen@\ht0%
+		\advance\dimen@\dp0%
+	}%
+	\def\stuff{\BODY}% Store environment body
+	\buildbox%
+	% Compute upper and lower bounds
+	\ifdim\dimen@>#2
+	\loop
+	\fontdim.5\fontdim % Reduce font size by half
+	\buildbox
+	\ifdim\dimen@>#2 \repeat
+	\lowerfontdim\fontdim
+	\upperfontdim2\fontdim
+	\fontdim1.5\fontdim
+	\else
+	\loop
+	\fontdim2\fontdim % Double font size
+	\buildbox
+	\ifdim\dimen@<#2 \repeat
+	\upperfontdim\fontdim
+	\lowerfontdim.5\fontdim
+	\fontdim.75\fontdim
+	\fi
+	% Now try to find the optimum size
+	\loop
+	\message{Bounds: \the\lowerfontdim\space
+	         \the\fontdim\space \the\upperfontdim^^J}
+	\buildbox
+	\ifdim\dimen@>#2
+	\moreiterationstrue
+	\upperfontdim\fontdim
+	\advance\fontdim\lowerfontdim
+	\fontdim.5\fontdim
+	\else
+	\advance\dimen@-#2
+	\ifdim\dimen@<10pt
+	\lowerfontdim\fontdim
+	\advance\fontdim\upperfontdim
+	\fontdim.5\fontdim
+	\dimen@\upperfontdim
+	\advance\dimen@-\lowerfontdim
+	\ifdim\dimen@<.2pt
+	\moreiterationsfalse
+	\else
+	\moreiterationstrue
+	\fi
+	\else
+	\moreiterationsfalse
+	\fi
+	\fi
+	\ifmoreiterations \repeat
+	\box0% Typeset content
+}
+\makeatother
+
+
+\usepackage{graphicx,changepage}
+
+\usepackage[absolute, overlay]{textpos}
+
+\usepackage{tikz}
+\usepackage[pages=all]{background}
+\usepackage{color}
+\usepackage{pdfpages}
+\usepackage[abs]{overpic}
+\usepackage{pict2e}
+\usepackage{rotating}
+\usepackage{etoolbox}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+%\newcommand{\copyrightname}{Timo Ramsauer}
+%\newcommand{\overlay}{Hamburg} %Refs, Hamburg
+\newcommand{\playername}{COACH RENNAAAAAAER}
+\newcommand{\playernumber}{00}
+\newcommand{\position}{Beater}
+\newcommand{\motto}{tch, for this game and all the games to come. sefgw}
+\newcommand{\function}{Team Captian}
+%\newcommand{\backgroundimage}{/tmp/tmpcuvf5_dv.png}
+
+\usepackage[paperheight=88mm,paperwidth=59mm,top=0in,bottom=0in,right=0in,left=0in]{geometry}
+
+\backgroundsetup{
+	scale=1,
+	color=black,
+	opacity=1,
+	angle=0,
+	contents={%
+		\includegraphics[width=\paperwidth,height=\paperheight]{\backgroundimage}
+	}%
+}
+
+\usetikzlibrary{fadings}
+
+\begin{document}
+\raggedright
+\color{white}
+
+% Team
+%\begin{textblock*}{29mm}(4.8mm,6.5mm)
+%	\noindent \footnotesize\textbf{\teamname}
+%\end{textblock*}
+
+% Name
+\newlength{\originallength}
+\newlength{\maxlength}
+\setlength{\maxlength}{42mm}
+\begin{textblock*}{42mm}(4.8mm,60mm)
+	\settowidth{\originallength}{\noindent \fontsize{18.25}{18.25} \selectfont\textbf{\MakeUppercase{\playername}}}
+	\ifdim \originallength > \maxlength
+		\resizebox{\maxlength}{!}{\noindent \fontsize{18.25}{18.25} \selectfont\textbf{\MakeUppercase{\playername}}}
+	\else
+		\noindent \fontsize{18.25}{18.25} \selectfont\textbf{\MakeUppercase{\playername}}
+	\fi
+\end{textblock*}
+
+% Position
+\begin{textblock*}{40mm}(4.8mm,66mm)
+	\noindent \fontsize{9.8}{9.8} \selectfont \position
+\end{textblock*}
+
+% Spruch
+\newlength{\originalhight}
+\newlength{\maxhight}
+\setlength{\maxhight}{5.9mm}
+\settoheight{\originalhight}{\parbox{35mm}{
+	\fontsize{7.75}{7.75} \selectfont \textit{\textbf{\motto}}}}
+\begin{textblock*}{35mm}(20mm,72mm)
+\ifdim \originalhight > \maxhight%
+	\begin{fitbox}{35mm}{\maxhight}
+		\selectfont \textit{\textbf{\motto}}
+	\end{fitbox}
+\else%
+	\parbox{35mm}{\fontsize{7.75}{7.75} \selectfont \textit{\textbf{\motto}}}
+\fi%
+\end{textblock*}
+
+% Function
+\begin{textblock*}{39mm}(4.8mm,82mm)
+	\noindent \fontsize{8}{8} \selectfont\textbf{\function}
+\end{textblock*}
+
+% Copyright
+\begin{textblock*}{800mm}(4.8mm,11mm)
+	\begin{turn}{-90}
+	\noindent \fontsize{6}{6} \selectfont\copyright \copyrightname
+	\end{turn}
+\end{textblock*}
+
+% Background
+\begin{tikzpicture}[remember picture, overlay]
+\noindent\node[inner sep=0pt] at (current page.center) {%
+	\noindent\includegraphics[width=\paperwidth,height=1\paperheight]{overlays/\overlay}%
+};%
+\end{tikzpicture}
+
+% Number
+\ifdefempty{\playernumber}{}{
+	\begin{tikzpicture}[remember picture, overlay]
+	\noindent\node[inner sep=0pt] at (current page.center) {%
+		\noindent\includegraphics[width=\paperwidth,height=1\paperheight]{numbers/\playernumber}%
+	};%
+	\end{tikzpicture}
+}
+
+\end{document}

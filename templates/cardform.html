@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+{% block title %}
+    Trading Card Generator
+{% endblock %}
+
+{% block bootstrap3_extra_head %}
+    {{ form.media }}
+    <link rel="stylesheet" href="{% static 'cropperjs/dist/cropper.css' %}">
+    <link rel="stylesheet" href="{% static 'cardform.css' %}">
+
+{% endblock %}
+
+{% block content %}
+    {% bootstrap_form_errors form %}
+    <label class="control-label" for="id_name">Picture</label>
+      <div class="container">
+        <label class="label" data-toggle="tooltip" title="Upload your image">
+          <img class="rounded" id="avatar" src="{% static 'Upload.jpg' %}" alt="avatar" style="width: 25%; height: 25%">
+          <input type="file" class="sr-only" id="input" name="image" accept="image/*">
+        </label>
+        <div class="alert" role="alert" style="display: none;"></div>
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Crop the image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="img-container">
+                  <img id="image" src="">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="crop">Crop</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script src="{% static 'cropperjs/dist/cropper.js' %}"></script>
+    <script src="{% static 'cardform.js' %}"></script>
+    <div class="help-block">Requirements: minimum width 650px; minimum hight 992px </div>
+    <form role="form" id="cropping_form" action="." method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {% bootstrap_form form %}
+        {% buttons submit='OK' reset="Cancel" %}{% endbuttons %}
+        <div class="progress" style="display: none;">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+        </div>
+    </form>
+{% endblock %}

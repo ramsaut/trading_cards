@@ -619,3 +619,4 @@ fabric.properties
 
 # End of https://www.gitignore.io/api/node,linux,latex,python,django,pycharm
 
+static/
