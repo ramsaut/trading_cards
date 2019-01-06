@@ -5,6 +5,7 @@ from django.core.files.storage import FileSystemStorage
 from django.shortcuts import redirect
 import subprocess
 import os
+import secrets
 
 from .forms import *
 
@@ -22,13 +23,15 @@ class DefaultFormsetView(FormView):
         form = self.get_form()
 
         if form.is_valid():
-            return self.form_valid(form)
+            output = self.form_valid(form)
+            return redirect("http://"+request.get_host() + output)
         else:
             return self.form_invalid(form)
 
     def form_valid(self, form):
         # Create new directory to store output
-        directory = tempfile.mkdtemp(dir=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'output'))
+        directory = tempfile.mkdtemp(prefix=secrets.token_urlsafe(),
+                                     dir=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'output'))
         d = form.cleaned_data
         p = subprocess.Popen(["pdflatex",
                               "-output-directory", directory,
@@ -53,4 +56,5 @@ class DefaultFormsetView(FormView):
                              cwd=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'latex'))
         p.wait()
         # Redirect to file
-        return redirect()
+
+        return directory[len(os.path.dirname(os.path.realpath(__file__))):] + "/document.pdf"
