@@ -4,6 +4,7 @@ from .models import *
 from io import BytesIO
 from django.core.exceptions import ValidationError
 import tempfile
+from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
 
 from bootstrap3.tests import TestForm
 
@@ -71,7 +72,15 @@ class ImageDataField(forms.ImageField):
 class CardForm(Form):
     name = forms.CharField(label='Your name', max_length=20, help_text="Recommend below 10 characters")
     team = forms.ChoiceField(choices=TEAM_CHOICES)
-    number = forms.CharField(label='Your number', max_length=2, required=False)
+    number = forms.CharField(label='Your number', max_length=2, required=False, validators=[
+            RegexValidator(
+                r'^[0-9]*$',
+                'Only 0-9 and 00-99 are allowed.',
+                'Invalid Number'
+            ),
+            MinLengthValidator(1),
+            MaxLengthValidator(2),
+        ],)
     phrase = forms.CharField(widget=forms.Textarea, max_length=100, help_text="Recommend below 56 characters")
     copy = forms.CharField(label='Copyright', help_text='Give credit, if the photographer wants it.', max_length=30, required=False)
     position = forms.MultipleChoiceField(choices=POSITION_CHOICES, required=False)

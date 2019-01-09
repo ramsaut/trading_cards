@@ -10,6 +10,25 @@ import base64
 from .forms import *
 
 
+def latexCleanText(text):
+    new = ""
+    for c in text:
+        c = {
+            '#': r'\#',
+            '$': r'\$',
+            '%': r'\%',
+            '^': r'\^{}',
+            '&': r'\&',
+            '_': r'\_',
+            '{': r'\{',
+            '}': r'\}',
+            '~': r'\~{}',
+            '\\': r'\textbackslash{}',
+        }.get(c, c)
+        new += c
+    return new
+
+
 class DefaultFormsetView(FormView):
     template_name = "cardform.html"
     form_class = CardForm
@@ -39,13 +58,13 @@ class DefaultFormsetView(FormView):
                               (r'\def\copyrightname{{{}}}\def\overlay{{{}}}\def\backgroundimage{{{}}}' +
                               r'\def\playername{{{}}}\def\playernumber{{{}}}\def\position{{{}}}' +
                               r'\def\motto{{{}}}\def\function{{{}}}\input{{document}}').format(
-                                  d['copy'],
+                                  latexCleanText(d['copy']),
                                   d['team'],
                                   d['image'].name,
-                                  d['name'],
-                                  d['number'],
-                                  ', '.join(d['position']),
-                                  d['phrase'],
+                                  latexCleanText(d['name']),
+                                  latexCleanText(d['number']),
+                                  latexCleanText(', '.join(d['position'])),
+                                  latexCleanText(d['phrase']),
                                   d['func'])],
                              cwd=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'latex'))
         p.wait()
