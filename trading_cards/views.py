@@ -36,15 +36,9 @@ class DefaultFormsetView(FormView):
         p = subprocess.Popen(["pdflatex",
                               "-output-directory", directory,
                               "-synctex=1", "-interaction=nonstopmode",
-                              "\\def\\copyrightname{{{}}}"
-                              "\\def\\overlay{{{}}}"
-                              "\\def\\backgroundimage{{{}}}"
-                              "\\def\\playername{{{}}}"
-                              "\\def\\playernumber{{{}}}"
-                              "\\def\\position{{{}}}"
-                              "\\def\\motto{{{}}}"
-                              "\\def\\function{{{}}}"
-                              "\\input{{document}}".format(
+                              (r'\def\copyrightname{{{}}}\def\overlay{{{}}}\def\backgroundimage{{{}}}' +
+                              r'\def\playername{{{}}}\def\playernumber{{{}}}\def\position{{{}}}' +
+                              r'\def\motto{{{}}}\def\function{{{}}}\input{{document}}').format(
                                   d['copy'],
                                   d['team'],
                                   d['image'].name,
