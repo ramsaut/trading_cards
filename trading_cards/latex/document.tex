@@ -172,11 +172,13 @@
 \end{textblock*}
 
 % Copyright
+\ifdefempty{\copyrightname}{}{
 \begin{textblock*}{800mm}(4.8mm,11mm)
 	\begin{turn}{-90}
 	\noindent \fontsize{6}{6} \selectfont\copyright \copyrightname
 	\end{turn}
 \end{textblock*}
+}
 
 % Background
 \begin{tikzpicture}[remember picture, overlay]
