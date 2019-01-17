@@ -18,10 +18,15 @@
     {% bootstrap_form_errors form %}
     <label class="control-label" for="id_name">Picture</label>
       <div class="container">
-        <label class="label" data-toggle="tooltip" title="Upload your image">
-          <img class="rounded" id="avatar" src="{% static 'Upload.jpg' %}" alt="avatar" style="width: 25%; height: 25%">
-          <input type="file" class="sr-only" id="input" name="image" accept="image/*">
-        </label>
+        <div class="control-group error">
+            <label class="label" data-toggle="tooltip" title="Upload your image">
+              <img class="rounded" id="avatar" src="{% static 'Upload.jpg' %}" alt="avatar" style="width: 25%; height: 25%">
+              <input type="file" class="sr-only" id="input" name="image" accept="image/*">
+            </label>
+            {% for error in form.image.errors %}
+                <span class="help-inline errorlist errors">{{ error }}</span>
+            {% endfor %}
+        </div>
         <div class="alert" role="alert" style="display: none;"></div>
         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
