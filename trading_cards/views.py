@@ -8,6 +8,7 @@ import os
 import base64
 from django.utils.text import slugify
 from django.http import HttpResponse
+import shutil
 
 from .forms import *
 
@@ -73,5 +74,8 @@ class DefaultFormsetView(FormView):
         file_path = directory + "/document.pdf"
         fsock = open(file_path, "rb")
         response = HttpResponse(fsock, content_type='application/pdf')
-        response['Content-Disposition'] = 'attachment; filename="'+slugify(d['name'])+'_'+slugify(d['team'])+'".pdf"'
+        response['Content-Disposition'] = 'attachment; filename="'+slugify(d['name'])+'_'+slugify(d['team'])+'.pdf"'
+        fsock.close()
+        shutil.rmtree(directory)
+
         return response
