@@ -6,6 +6,8 @@ from django.shortcuts import redirect
 import subprocess
 import os
 import base64
+from django.utils.text import slugify
+from django.http import HttpResponse
 
 from .forms import *
 
@@ -43,7 +45,7 @@ class DefaultFormsetView(FormView):
 
         if form.is_valid():
             output = self.form_valid(form)
-            return redirect("http://"+request.get_host() + output)
+            return output
         else:
             return self.form_invalid(form)
 
@@ -68,6 +70,8 @@ class DefaultFormsetView(FormView):
                                   d['func'])],
                              cwd=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'latex'))
         p.wait()
-        # Redirect to file
-
-        return directory[len(os.path.dirname(os.path.realpath(__file__))):] + "/document.pdf"
+        file_path = directory + "/document.pdf"
+        fsock = open(file_path, "rb")
+        response = HttpResponse(fsock, content_type='application/pdf')
+        response['Content-Disposition'] = 'attachment; filename="'+slugify(d['name'])+'_'+slugify(d['team'])+'".pdf"'
+        return response
