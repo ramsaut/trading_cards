@@ -188,12 +188,18 @@
 \end{tikzpicture}
 
 % Number
-\ifdefempty{\playernumber}{}{
+\ifdefempty{\playernumber}{
 	\begin{tikzpicture}[remember picture, overlay]
-	\noindent\node[inner sep=0pt] at (current page.center) {%
-		\noindent\includegraphics[width=\paperwidth,height=1\paperheight]{numbers/\playernumber}%
-	};%
-	\end{tikzpicture}
+        \noindent\node[inner sep=0pt] at (current page.center) {%
+            \noindent\includegraphics[width=\paperwidth,height=1\paperheight]{numbers/None}%
+        };%
+        \end{tikzpicture}
+	}{
+        \begin{tikzpicture}[remember picture, overlay]
+        \noindent\node[inner sep=0pt] at (current page.center) {%
+            \noindent\includegraphics[width=\paperwidth,height=1\paperheight]{numbers/\playernumber}%
+        };%
+        \end{tikzpicture}
 }
 
 \end{document}
