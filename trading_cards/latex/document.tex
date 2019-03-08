@@ -95,14 +95,14 @@
 \usepackage{etoolbox}
 
 
-%\newcommand{\copyrightname}{Timo Ramsauer}
-%\newcommand{\overlay}{Hamburg} %Refs, Hamburg
-%\newcommand{\playername}{COACH RENNAAAAAAER}
-%\newcommand{\playernumber}{00}
-%\newcommand{\position}{Beater}
-%\newcommand{\motto}{tch, for this game and all the games to come. sefgw}
-%\newcommand{\function}{Team Captian}
-%\newcommand{\backgroundimage}{/tmp/tmpcuvf5_dv.png}
+\newcommand{\copyrightname}{Timo Ramsauer}
+\newcommand{\overlay}{Hamburg} %Refs, Hamburg
+\newcommand{\playername}{COACH}
+\newcommand{\playernumber}{00}
+\newcommand{\position}{Beater}
+\newcommand{\motto}{tch, for this game and all the games to come. sefgw}
+\newcommand{\function}{Team Captian}
+\newcommand{\backgroundimage}{example-grid-100x100pt}
 
 \usepackage[paperheight=88mm,paperwidth=59mm,top=0in,bottom=0in,right=0in,left=0in]{geometry}
 
@@ -140,7 +140,7 @@
 		\noindent \fontsize{18.25}{18.25} \selectfont\textbf{\MakeUppercase{\playername}}
 		\fi}
 
-\begin{textblock*}{42mm}(3.8mm,60mm + \perfecthight - \originalhight)
+\begin{textblock*}{42mm}(3.3mm,60mm + \perfecthight - \originalhight)
 	\settowidth{\originallength}{\noindent \fontsize{18.25}{18.25} \selectfont\textbf{\MakeUppercase{\playername}}}
 	\ifdim \originallength > \maxlength
 		\resizebox{\maxlength}{!}{\noindent \fontsize{18.25}{18.25} \selectfont\textbf{\MakeUppercase{\playername}}}
@@ -150,7 +150,7 @@
 \end{textblock*}
 
 % Position
-\begin{textblock*}{40mm}(3.2mm,66mm)
+\begin{textblock*}{40mm}(3.3mm,66mm)
 	\noindent \fontsize{9.8}{9.8} \selectfont \position
 \end{textblock*}
 
@@ -170,7 +170,7 @@
 \end{textblock*}
 
 % Function
-\begin{textblock*}{39mm}(3.7mm,82mm)
+\begin{textblock*}{39mm}(3.3mm,82mm)
 	\noindent \fontsize{8}{8} \selectfont\textbf{\function}
 \end{textblock*}
 
