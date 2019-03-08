@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% load bootstrap3 %}
+{% load bootstrap4 %}
 {% load staticfiles %}
 
 {% block title %}
     Trading Card Generator
 {% endblock %}
 
-{% block bootstrap3_extra_head %}
+{% block bootstrap4_extra_head %}
     {{ form.media }}
     <link rel="stylesheet" href="{% static 'cropperjs/dist/cropper.css' %}">
     <link rel="stylesheet" href="{% static 'cardform.css' %}">
