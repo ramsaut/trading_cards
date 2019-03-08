@@ -19,5 +19,7 @@ from .views import *
 
 urlpatterns = [
     path('', DefaultFormsetView.as_view(), name="home"),
+    path('privacy', PrivacyView.as_view(), name="privacy"),
+    path('impressum', ImpressumView.as_view(), name="impressum"),
     path('admin/', admin.site.urls),
 ]

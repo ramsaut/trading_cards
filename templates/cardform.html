@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
-{% load bootstrap3 %}
+{% load bootstrap4 %}
 {% load staticfiles %}
 
 {% block title %}
     Trading Card Generator
 {% endblock %}
 
-{% block bootstrap3_extra_head %}
+{% block bootstrap4_extra_head %}
     {{ form.media }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{% static 'cropperjs/dist/cropper.css' %}">
     <link rel="stylesheet" href="{% static 'cardform.css' %}">
 
@@ -19,8 +20,8 @@
     <label class="control-label" for="id_name">Picture</label>
       <div class="container">
         <div class="control-group error">
-            <label class="label" data-toggle="tooltip" title="Upload your image">
-              <img class="rounded" id="avatar" src="{% static 'Upload.jpg' %}" alt="avatar" style="width: 25%; height: 25%">
+            <label class="label">
+              <img class="rounded" data-toggle="tooltip" title="Upload your image" id="avatar" src="{% static 'Upload.jpg' %}" alt="avatar" style="width: 25%; height: 25%">
               <input type="file" class="sr-only" id="input" name="image" accept="image/*">
             </label>
             {% for error in form.image.errors %}
@@ -57,9 +58,6 @@
         {% csrf_token %}
 
         {% bootstrap_form form %}
-        {% buttons submit='OK' reset="Cancel" %}{% endbuttons %}
-        <div class="progress" style="display: none;">
-          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-        </div>
+        {% buttons submit='OK' reset="Clear form" %}{% endbuttons %}
     </form>
 {% endblock %}
