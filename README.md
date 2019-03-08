@@ -99,9 +99,17 @@ Install pdflatex:
 apt install texlive-latex-recommended texlive-generic-extra texlive-latex-extra
 ```
 
-Install MyriadPro:
+Install Helvetica
 
-https://github.com/sebschub/FontPro
+Copy fonts e.g. to /usr/share/fonts/somefolder/
 
-There is an AUR package: https://aur.archlinux.org/packages/texlive-myriadpro-git/
+Update cache:
+```
+fc-cache -fv
+```
 
+Restart server:
+
+```
+supervisorctl restart guni:gunicorn
+```
