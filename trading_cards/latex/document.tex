@@ -95,14 +95,14 @@
 \usepackage{etoolbox}
 
 
-\newcommand{\copyrightname}{Timo Ramsauer}
-\newcommand{\overlay}{Hamburg} %Refs, Hamburg
-\newcommand{\playername}{COACH}
-\newcommand{\playernumber}{00}
-\newcommand{\position}{Beater}
-\newcommand{\motto}{tch, for this game and all the games to come. sefgw}
-\newcommand{\function}{Team Captian}
-\newcommand{\backgroundimage}{example-grid-100x100pt}
+%\newcommand{\copyrightname}{Timo Ramsauer}
+%\newcommand{\overlay}{Refs} %Refs, Hamburg
+%\newcommand{\playername}{COACH}
+%\newcommand{\playernumber}{00}
+%\newcommand{\position}{Beater}
+%\newcommand{\motto}{tch, for this game and all the games to come. sefgw}
+%\newcommand{\function}{Team Captian}
+%\newcommand{\backgroundimage}{example-grid-100x100pt}
 
 \usepackage[paperheight=88mm,paperwidth=59mm,top=0in,bottom=0in,right=0in,left=0in]{geometry}
 
@@ -175,8 +175,11 @@
 \end{textblock*}
 
 % Copyright
+\newlength{\unturnedhight}
+\settoheight{\unturnedhight}{\parbox{2000mm}{\fontsize{6}{6} \selectfont\copyright \copyrightname}}
+
 \ifdefempty{\copyrightname}{}{
-\begin{textblock*}{800mm}(4.35mm,11mm)
+\begin{textblock*}{800mm}(5.7mm-\unturnedhight,11mm)
 	\begin{turn}{-90}
 	\noindent \fontsize{6}{6} \selectfont\copyright \copyrightname
 	\end{turn}
