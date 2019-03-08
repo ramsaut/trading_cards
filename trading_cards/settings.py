@@ -26,7 +26,7 @@ SECRET_KEY = 'ipp)*p%n9szcr==hc+e%5s-q_4tcxemrr2lp!9=$h%bo%qgtif'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tcg.timo-ramsauer.de']
+ALLOWED_HOSTS = ['tcg.timo-ramsauer.de', '127.0.0.1']
 
 
 # Application definition

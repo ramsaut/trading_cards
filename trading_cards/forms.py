@@ -6,8 +6,6 @@ from django.core.exceptions import ValidationError
 import tempfile
 from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
 
-from bootstrap3.tests import TestForm
-
 TEAM_CHOICES = (("Refs", "Referees"),
                 ("Hamburg", "Hamburg Werewolfs"))
 
