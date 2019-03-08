@@ -100,7 +100,7 @@
 %\newcommand{\playername}{COACH}
 %\newcommand{\playernumber}{00}
 %\newcommand{\position}{Beater}
-%\newcommand{\motto}{tch, for this game and all the games to come. sefgw}
+%\newcommand{\motto}{SDASDFDASEF kjh}
 %\newcommand{\function}{Team Captian}
 %\newcommand{\backgroundimage}{example-grid-100x100pt}
 
@@ -160,12 +160,13 @@
 \settoheight{\originalhight}{\parbox{35mm}{
 	\fontsize{7.75}{7.75} \selectfont \textit{\textbf{\motto}}}}
 \begin{textblock*}{35mm}(20mm,72mm)
+	\raggedright
 \ifdim \originalhight > \maxhight%
-	\begin{fitbox}{35mm}{\maxhight}
+	\begin{fitbox}{35mm}{\maxhight}\raggedright
 		\selectfont \textit{\textbf{\motto}}
 	\end{fitbox}
 \else%
-	\parbox{35mm}{\fontsize{7.75}{7.75} \selectfont \textit{\textbf{\motto}}}
+	\raggedright\parbox{35mm}{\raggedright\fontsize{7.75}{7.75} \selectfont \textit{\textbf{\motto}}}
 \fi%
 \end{textblock*}
 

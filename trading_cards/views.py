@@ -79,3 +79,10 @@ class DefaultFormsetView(FormView):
         shutil.rmtree(directory)
 
         return response
+
+
+class PrivacyView(TemplateView):
+    template_name = "privacy.html"
+
+class ImpressumView(TemplateView):
+    template_name = "impressum.html"
