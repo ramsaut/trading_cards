@@ -35,7 +35,7 @@
       });
       $modal.on('shown.bs.modal', function () {
         cropper = new Cropper(image, {
-          aspectRatio: 650/992,
+          aspectRatio: 868/1168,
           viewMode: 2
         });
       }).on('hidden.bs.modal', function () {
