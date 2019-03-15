@@ -203,13 +203,13 @@
      inkscape:window-height="1016"
      id="namedview859"
      showgrid="false"
-     inkscape:zoom="11.353022"
-     inkscape:cx="12.897555"
-     inkscape:cy="278.87153"
+     inkscape:zoom="2.0069497"
+     inkscape:cx="-135.56223"
+     inkscape:cy="189.65877"
      inkscape:window-x="67"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g865"
+     inkscape:current-layer="g883"
      showguides="false" /><g
      id="g865"
      inkscape:groupmode="layer"
@@ -221,7 +221,8 @@
    id="g881"><g
      id="g883"
      clip-path="url(#clipPath887)"><g
-       id="g889"><g
+       id="g889"
+       transform="translate(0,8.8433552)"><g
          id="g891" /><g
          id="g909"
          mask="url(#mask897)"><g
@@ -233,7 +234,8 @@
                style="fill:#231f20;fill-opacity:0.52000397;fill-rule:nonzero;stroke:none"
                id="path917"
                inkscape:connector-curvature="0" /></g></g></g></g><g
-       id="g923"><g
+       id="g923"
+       transform="translate(0,8.8425322)"><g
          id="g925" /><g
          id="g949"
          mask="url(#mask937)"><g
@@ -247,7 +249,8 @@
                  style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
                  id="path957"
                  inkscape:connector-curvature="0" /></g></g></g></g></g><g
-       id="g965"><g
+       id="g965"
+       transform="translate(0,-3.5952896)"><g
          id="g967" /><g
          id="g1017"><g
            clip-path="url(#clipPath971)"
@@ -266,7 +269,8 @@
                        style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
                        id="path1003"
                        inkscape:connector-curvature="0" /></g></g></g></g></g></g></g></g><g
-       id="g1019"><g
+       id="g1019"
+       transform="translate(0,8.8425322)"><g
          id="g1021" /><g
          id="g1071"><g
            clip-path="url(#clipPath1025)"
@@ -299,17 +303,23 @@
      y="-200.84143"
      style="stroke-width:0.75;-inkscape-font-specification:'Helvetica LT Std';font-family:'Helvetica LT Std';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;" /></text>
 
+
+
+
 <text
    xml:space="preserve"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.25;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-   x="11.738202"
-   y="-223.33362"
+   x="17.250269"
+   y="-219.73834"
    id="text115"
    transform="scale(1,-1)"><tspan
      sodipodi:role="line"
      id="tspan113"
-     x="11.738202"
-     y="-223.33362"
+     x="17.250269"
+     y="-219.73834"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.75">Referee</tspan></text>
+
+
+
 
 </g></svg>
