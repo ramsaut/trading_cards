@@ -55,7 +55,7 @@ class DefaultFormsetView(FormView):
         directory = tempfile.mkdtemp(prefix=base64.urlsafe_b64encode(os.urandom(64)).decode().replace('=', ''),
                                      dir=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'output'))
         d = form.cleaned_data
-        p = subprocess.Popen(["pdflatex",
+        p = subprocess.Popen(["xelatex",
                               "-output-directory", directory,
                               "-synctex=1", "-interaction=nonstopmode",
                               (r'\def\copyrightname{{{}}}\def\overlay{{{}}}\def\backgroundimage{{{}}}' +
