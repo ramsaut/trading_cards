@@ -1,0 +1,13 @@
+\documentclass[]{article}
+\usepackage{tikz}
+\usepackage[paperheight=119mm,paperwidth=93mm,top=0in,bottom=0in,right=0in,left=0in]{geometry}
+\usepackage{pdfpages}
+
+\begin{document}
+  \begin{tikzpicture}[overlay,remember picture]
+    \node at (current page.center)
+    	{\includegraphics[]{../trading_cards/latex/document.pdf}};
+    \node at (current page.center)
+       {\includegraphics[]{1.pdf}};
+  \end{tikzpicture}
+\end{document}
