@@ -111,11 +111,11 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
 
 \newcommand{\copyrightname}{Van Klaren Quidditch Photography}
 \newcommand{\overlay}{Refs} %Refs, Hamburg
-\newcommand{\playername}{Timo Ramsau}
-\newcommand{\playernumber}{01}
-\newcommand{\position}{Keeper, Chaser, Seeker}
-\newcommand{\motto}{Sed ut perspiciatis unde omnis iste natus error sit voluptatem }
-\newcommand{\function}{Team Captian}
+\newcommand{\playername}{BOLD CAPS 16 PT}
+\newcommand{\playernumber}{90}
+\newcommand{\position}{Regular 8 Punkt}
+\newcommand{\motto}{Bold Italic linksbündig mit einer Schriftgröße von 6 Punkt und einem Zeilenabstand von 9 Punkt}
+\newcommand{\function}{Bold 8 Punkt}
 \newcommand{\backgroundimage}{example-grid-100x100pt}
 
 \usepackage[paperheight=98.9mm,paperwidth=73.5mm,top=0in,bottom=0in,right=0in,left=0in]{geometry}
@@ -147,32 +147,32 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
 \setlength{\perfecthight}{12.6737pt}
 \newlength{\maxlength}
 \setlength{\maxlength}{50mm}
-\settoheight{\originalhight}{\settowidth{\originallength}{\noindent \fontsize{18.25}{18.25} \selectfont\textbf{\MakeUppercase{\playername}}}
+\settoheight{\originalhight}{\settowidth{\originallength}{\noindent \fontsize{16}{16} \selectfont\textbf{\MakeUppercase{\playername}}}
 		\ifdim \originallength > \maxlength
-		\resizebox{\maxlength}{!}{\noindent \fontsize{18.25}{18.25} \selectfont\textbf{\MakeUppercase{\playername}}}
+		\resizebox{\maxlength}{!}{\noindent \fontsize{16}{16} \selectfont\textbf{\MakeUppercase{\playername}}}
 		\else
-		\noindent \fontsize{18.25}{18.25} \selectfont\textbf{\MakeUppercase{\playername}}
+		\noindent \fontsize{16}{16} \selectfont\textbf{\MakeUppercase{\playername}}
 		\fi}
 
 \begin{textblock*}{55mm}(7.3mm,64mm + \perfecthight - \originalhight)
-	\settowidth{\originallength}{\noindent \fontsize{18.25}{18.25} \selectfont\textbf{\MakeUppercase{\playername}}}
+	\settowidth{\originallength}{\noindent \fontsize{16}{16} \selectfont\textbf{\MakeUppercase{\playername}}}
 	\ifdim \originallength > \maxlength
-		\resizebox{\maxlength}{!}{\noindent \fontsize{18.25}{18.25} \selectfont\textbf{\MakeUppercase{\playername}}}
+		\resizebox{\maxlength}{!}{\noindent \fontsize{16}{16} \selectfont\textbf{\MakeUppercase{\playername}}}
 	\else
-		\noindent \fontsize{18.25}{18.25} \selectfont\textbf{\MakeUppercase{\playername}}
+		\noindent \fontsize{16}{16} \selectfont\textbf{\MakeUppercase{\playername}}
 	\fi
 \end{textblock*}
 
 % Position
 \begin{textblock*}{40mm}(7.3mm,70.5mm)
-	\noindent \fontsize{9.8}{9.8} \selectfont \position
+	\noindent \fontsize{8}{8} \selectfont \position
 \end{textblock*}
 
 % Spruch
 \newlength{\maxhight}
 \setlength{\maxhight}{5.0mm}
 \settoheight{\originalhight}{\parbox{40mm}{
-	\fontsize{9}{9} \selectfont \textit{\textbf{\motto}}}}
+	\fontsize{6}{9} \selectfont \textit{\textbf{\motto}}}}
 \begin{textblock*}{40mm}(25mm,78mm)
 	\raggedright
 \ifdim \originalhight > \maxhight%
@@ -180,7 +180,7 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
 		\selectfont \textit{\textbf{\motto}}
 	\end{fitbox}
 \else%
-	\raggedright\parbox{40mm}{\raggedright\fontsize{9}{9} \selectfont  \textit{\textbf{\motto}}}
+	\raggedright\parbox{40mm}{\raggedright\fontsize{6}{9} \selectfont  \textit{\textbf{\motto}}}
 \fi%
 \end{textblock*}
 
@@ -194,9 +194,9 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
 \settoheight{\unturnedhight}{\parbox{2000mm}{\fontsize{6}{6} \selectfont\copyright \copyrightname}}
 
 \ifdefempty{\copyrightname}{}{
-\begin{textblock*}{800mm}(9.7mm-\unturnedhight,15mm)
+\begin{textblock*}{800mm}(9.7mm-\unturnedhight,17mm)
 	\begin{turn}{-90}
-	\noindent \fontsize{6}{6} \selectfont\copyright \copyrightname
+	\noindent \fontsize{5}{5} \selectfont\copyright \copyrightname
 	\end{turn}
 \end{textblock*}
 }
@@ -217,7 +217,7 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
         \end{tikzpicture}
 	}{
         \begin{tikzpicture}[remember picture, overlay]
-        \noindent\node[inner sep=0pt] at (3.2,-3.8) {%
+        \noindent\node[inner sep=0pt] at (3.2,-3.83) {%
             \noindent\includegraphics[width=\paperwidth,height=1\paperheight]{numbers/\playernumber}%
         };%
         \end{tikzpicture}
