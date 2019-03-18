@@ -55,7 +55,7 @@ class DefaultFormsetView(FormView):
         directory = tempfile.mkdtemp(prefix=base64.urlsafe_b64encode(os.urandom(64)).decode().replace('=', ''),
                                      dir=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'output'))
         d = form.cleaned_data
-        p = subprocess.Popen(["xelatex",
+        xelatexCommand = ["xelatex",
                               "-output-directory", directory,
                               "-synctex=1", "-interaction=nonstopmode",
                               (r'\def\copyrightname{{{}}}\def\overlay{{{}}}\def\backgroundimage{{{}}}' +
@@ -68,7 +68,11 @@ class DefaultFormsetView(FormView):
                                   latexCleanText(d['number']),
                                   latexCleanText(', '.join(d['position'])),
                                   latexCleanText(d['phrase']),
-                                  d['func'])],
+                                  d['func'])]
+        p = subprocess.Popen(xelatexCommand,
+                             cwd=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'latex'))
+        p.wait()
+        p = subprocess.Popen(xelatexCommand, # Run two times, because latex is latex
                              cwd=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'latex'))
         p.wait()
         file_path = directory + "/document.pdf"
