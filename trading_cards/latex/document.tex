@@ -109,7 +109,7 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
 \usepackage{etoolbox}
 
 
-\newcommand{\copyrightname}{Van Klaren Quidditch Photography}
+\newcommand{\copyrightname}{Van Klaren Van Klaren}
 \newcommand{\overlay}{Refs} %Refs, Hamburg
 \newcommand{\teamname}{Referee} %Refs, Hamburg
 \newcommand{\playername}{BOLD CAPS 16 PT}
@@ -155,7 +155,7 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
 		\noindent \fontsize{16}{16} \selectfont\textbf{\MakeUppercase{\playername}}
 		\fi}
 
-\begin{textblock*}{55mm}(7.3mm,64mm + \perfecthight - \originalhight)
+\begin{textblock*}{55mm}(7.5mm,64.78mm + \perfecthight - \originalhight)
 	\settowidth{\originallength}{\noindent \fontsize{16}{16} \selectfont\textbf{\MakeUppercase{\playername}}}
 	\ifdim \originallength > \maxlength
 		\resizebox{\maxlength}{!}{\noindent \fontsize{16}{16} \selectfont\textbf{\MakeUppercase{\playername}}}
@@ -165,28 +165,28 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
 \end{textblock*}
 
 % Position
-\begin{textblock*}{40mm}(7.3mm,70.5mm)
+\begin{textblock*}{40mm}(7.68mm,71.09mm)
 	\noindent \fontsize{8}{8} \selectfont \position
 \end{textblock*}
 
 % Spruch
 \newlength{\maxhight}
 \setlength{\maxhight}{5.0mm}
-\settoheight{\originalhight}{\parbox{40mm}{
+\settoheight{\originalhight}{\parbox{36mm}{
 	\fontsize{6}{9} \selectfont \textit{\textbf{\motto}}}}
-\begin{textblock*}{40mm}(26mm,77mm)
+\begin{textblock*}{36mm}(29.21mm,76.855mm)
 	\raggedright
 \ifdim \originalhight > \maxhight%
-	\begin{fitbox}{40mm}{\maxhight}\raggedright
+	\begin{fitbox}{36mm}{\maxhight}\raggedright
 		\selectfont \textit{\textbf{\motto}}
 	\end{fitbox}
 \else%
-	\raggedright\parbox{40mm}{\raggedright\fontsize{6}{9} \selectfont  \textit{\textbf{\motto}}}
+	\raggedright\parbox{36mm}{\raggedright\fontsize{6}{9} \selectfont  \textit{\textbf{\motto}}}
 \fi%
 \end{textblock*}
 
 % Function
-\begin{textblock*}{39mm}(7.3mm,88mm)
+\begin{textblock*}{39mm}(7.62mm,88mm)
 	\noindent \fontsize{8}{8} \selectfont\textbf{\function}
 \end{textblock*}
 
@@ -195,9 +195,9 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
 \settoheight{\unturnedhight}{\parbox{2000mm}{\fontsize{6}{6} \selectfont\copyright \copyrightname}}
 
 \ifdefempty{\copyrightname}{}{
-\begin{textblock*}{800mm}(9.7mm-\unturnedhight,17mm)
+\begin{textblock*}{800mm}(10mm-\unturnedhight,17mm)
 	\begin{turn}{-90}
-	\noindent \fontsize{5}{5} \selectfont\copyright \copyrightname
+	\noindent \fontsize{5}{5} \selectfont\copyright\ \copyrightname
 	\end{turn}
 \end{textblock*}
 }
@@ -224,8 +224,8 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
         \end{tikzpicture}
 	}{
         \begin{tikzpicture}[remember picture, overlay]
-        \noindent\node[inner sep=0pt] at (3.2,-3.9) {%
-            \noindent\includegraphics[width=\paperwidth,height=1\paperheight]{numbers/\playernumber}%
+        \noindent\node[inner sep=0pt] at (4.15,-4.4) {%
+            \noindent\includegraphics[]{numbers/\playernumber}%
         };%
         \end{tikzpicture}
 }
