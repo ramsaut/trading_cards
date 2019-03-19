@@ -111,6 +111,7 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
 
 \newcommand{\copyrightname}{Van Klaren Quidditch Photography}
 \newcommand{\overlay}{Refs} %Refs, Hamburg
+\newcommand{\teamname}{Referee} %Refs, Hamburg
 \newcommand{\playername}{BOLD CAPS 16 PT}
 \newcommand{\playernumber}{90}
 \newcommand{\position}{Regular 8 Punkt}
@@ -137,9 +138,9 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
 \color{white}
 
 % Team
-%\begin{textblock*}{29mm}(4.8mm,6.5mm)
-%	\noindent \footnotesize\textbf{\teamname}
-%\end{textblock*}
+\begin{textblock*}{39mm}(7.3mm,10.5mm)
+	\noindent \fontsize{8}{8} \selectfont\textbf{\teamname}
+\end{textblock*}
 
 \newlength{\originalhight}
 \newlength{\originallength}
@@ -173,7 +174,7 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
 \setlength{\maxhight}{5.0mm}
 \settoheight{\originalhight}{\parbox{40mm}{
 	\fontsize{6}{9} \selectfont \textit{\textbf{\motto}}}}
-\begin{textblock*}{40mm}(25mm,78mm)
+\begin{textblock*}{40mm}(26mm,77mm)
 	\raggedright
 \ifdim \originalhight > \maxhight%
 	\begin{fitbox}{40mm}{\maxhight}\raggedright
@@ -204,7 +205,13 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
 % Background
 \begin{tikzpicture}[remember picture, overlay]
 \noindent\node[inner sep=0pt] at (current page.center) {%
-	\noindent\includegraphics[width=\paperwidth,height=1\paperheight]{overlays/\overlay}%
+	\noindent\includegraphics[width=\paperwidth,height=1\paperheight]{overlays/\overlay_1}%
+};%
+\end{tikzpicture}
+% Background multiply
+\begin{tikzpicture}[remember picture, overlay, blend mode=multiply]
+\noindent\node[inner sep=0pt] at (current page.center) {%
+	\noindent\includegraphics[width=\paperwidth,height=1\paperheight]{overlays/\overlay_2}%
 };%
 \end{tikzpicture}
 
@@ -217,7 +224,7 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
         \end{tikzpicture}
 	}{
         \begin{tikzpicture}[remember picture, overlay]
-        \noindent\node[inner sep=0pt] at (3.2,-3.83) {%
+        \noindent\node[inner sep=0pt] at (3.2,-3.9) {%
             \noindent\includegraphics[width=\paperwidth,height=1\paperheight]{numbers/\playernumber}%
         };%
         \end{tikzpicture}

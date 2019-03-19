@@ -9,7 +9,7 @@ import base64
 from django.utils.text import slugify
 from django.http import HttpResponse
 import shutil
-
+from django.conf import settings
 from .forms import *
 
 
@@ -58,11 +58,12 @@ class DefaultFormsetView(FormView):
         xelatexCommand = ["xelatex",
                               "-output-directory", directory,
                               "-synctex=1", "-interaction=nonstopmode",
-                              (r'\def\copyrightname{{{}}}\def\overlay{{{}}}\def\backgroundimage{{{}}}' +
+                              (r'\def\copyrightname{{{}}}\def\overlay{{{}}}\def\teamname{{{}}}\def\backgroundimage{{{}}}' +
                               r'\def\playername{{{}}}\def\playernumber{{{}}}\def\position{{{}}}' +
                               r'\def\motto{{{}}}\def\function{{{}}}\input{{document}}').format(
                                   latexCleanText(d['copy']),
-                                  d['team'],
+                                  d['team'],  # Overlay
+                                  settings.TEAMNAMES[d['team']],  # actual name
                                   d['image'].name,
                                   latexCleanText(d['name']),
                                   latexCleanText(d['number']),
