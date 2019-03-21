@@ -137,7 +137,7 @@ BOOTSTRAP3 = {
     "javascript_in_head": True,
 }
 
-DATA_UPLOAD_MAX_MEMORY_SIZE = 26214400
+DATA_UPLOAD_MAX_MEMORY_SIZE = 104857600
 
 # Teamnames
 TEAMNAMES = {
