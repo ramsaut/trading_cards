@@ -53,11 +53,20 @@
     </div>
     <script src="{% static 'cropperjs/dist/cropper.js' %}"></script>
     <script src="{% static 'cardform.js' %}"></script>
-    <div class="help-block">For perfect quality: minimum width 868px; minimum hight 1168px </div>
+    <div class="help-block">To upload a picture, click on the image above.<br>
+        For perfect quality, please keep the following requirements in mind:<br>
+        Minimum width: 868px<br>
+        Minimum hight: 1168px<br>
+        The trading card will be cropped in the production process. Please keep all important details off the edges of the card.<br>
+        If you're satisfied with your card, please upload it <a href="https://goo.gl/forms/JIPkvU8XdYYGFBfH2">here</a>.<br>
+    </div>
     <form role="form" id="cropping_form" action="." method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
         {% bootstrap_form form %}
-        {% buttons submit='OK' reset="Clear form" %}{% endbuttons %}
+        <div class="help-block">Press the submit button to start the generation of the trading card. The upload of the image might take a few seconds. Thank you for your patience.<br>
+    If you're satisfied with your card, please upload it <a href="https://goo.gl/forms/JIPkvU8XdYYGFBfH2">here</a>. The card and your data is not saved on this server!</div>
+        {% buttons submit='Submit' reset="Clear form" %}{% endbuttons %}
+
     </form>
 {% endblock %}
