@@ -7,7 +7,8 @@ import tempfile
 from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
 
 TEAM_CHOICES = (("Refs", "Referees"),
-                ("Hamburg", "Hamburg Werewolfs"))
+                ("Hamburg", "Hamburg Werewolfs"),
+                ("Bremen", "Portkeys Bremen"))
 
 POSITION_CHOICES = (("Keeper", "Keeper"),
                     ("Chaser", "Chaser"),

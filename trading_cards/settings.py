@@ -143,4 +143,5 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 26214400
 TEAMNAMES = {
     'Refs': 'Referees',
     'Hamburg': 'Hamburg Werewolfs',
+    'Bremen': 'Portkeys Bremen',
 }
