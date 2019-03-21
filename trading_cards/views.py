@@ -27,6 +27,8 @@ def latexCleanText(text):
             '}': r'\}',
             '~': r'\~{}',
             '\\': r'\textbackslash{}',
+            '\n': r'\\',
+            '\r': '',
         }.get(c, c)
         new += c
     return new
