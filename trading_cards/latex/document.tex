@@ -166,14 +166,14 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
 
 % Position
 \begin{textblock*}{40mm}(7.68mm,71.09mm)
-	\noindent \fontsize{8}{8} \selectfont \position
+	\noindent \fontsize{9}{9} \selectfont \position
 \end{textblock*}
 
 % Spruch
 \newlength{\maxhight}
 \setlength{\maxhight}{5.0mm}
 \settoheight{\originalhight}{\parbox{36mm}{
-	\fontsize{6}{9} \selectfont \textit{\textbf{\motto}}}}
+	\fontsize{10}{12} \selectfont \textit{\textbf{\motto}}}}
 \begin{textblock*}{36mm}(29.21mm,76.855mm)
 	\raggedright
 \ifdim \originalhight > \maxhight%
@@ -181,7 +181,7 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
 		\selectfont \textit{\textbf{\motto}}
 	\end{fitbox}
 \else%
-	\raggedright\parbox{36mm}{\raggedright\fontsize{6}{9} \selectfont  \textit{\textbf{\motto}}}
+	\raggedright\parbox{36mm}{\raggedright\fontsize{10}{12} \selectfont  \textit{\textbf{\motto}}}
 \fi%
 \end{textblock*}
 
