@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "cropperjs": "^1.4.3"
+    "cropperjs": "^1.4.3",
+    "hermite-resize": "git+https://github.com/viliusle/Hermite-resize.git"
   },
   "devDependencies": {},
   "scripts": {

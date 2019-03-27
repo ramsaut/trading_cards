@@ -47,6 +47,9 @@
         $modal.modal('hide');
         if (cropper) {
           canvas = cropper.getCroppedCanvas();
+          var HERMITE = new Hermite_class();
+          HERMITE.resample_single(canvas,868,1168, true);
+
           avatar.src = canvas.toDataURL();
           $progress.show();
           $alert.removeClass('alert-success alert-warning');
