@@ -71,7 +71,7 @@ class DefaultFormsetView(FormView):
                                   latexCleanText(d['number']),
                                   latexCleanText(', '.join(d['position'])),
                                   latexCleanText(d['phrase']),
-                                  d['func'])]
+                                  ', '.join(d['func']))]
         p = subprocess.Popen(xelatexCommand,
                              cwd=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'latex'))
         p.wait()

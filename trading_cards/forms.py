@@ -82,6 +82,7 @@ class CardForm(Form):
         ],)
     phrase = forms.CharField(widget=forms.Textarea, max_length=100, help_text="Recommend below 56 characters")
     copy = forms.CharField(label='Copyright', help_text='Give credit, if the photographer wants it.', max_length=50, required=False)
-    position = forms.MultipleChoiceField(choices=POSITION_CHOICES, required=False, help_text='Max. 3 positions, if all choose utility')
-    func = forms.ChoiceField(choices=FUNCTION_CHOICES, required=False)
+    position = forms.MultipleChoiceField(choices=POSITION_CHOICES, required=False, help_text='Max. 3 positions, if all choose utility; choose multiple by holding Ctrl./Strg.')
+    func = forms.MultipleChoiceField(choices=FUNCTION_CHOICES, required=False,
+                                         help_text='Max. 3 functions; choose multiple by holding Ctrl./Strg.')
     image = ImageDataField(widget=forms.HiddenInput)
