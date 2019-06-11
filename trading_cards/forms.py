@@ -6,9 +6,31 @@ from django.core.exceptions import ValidationError
 import tempfile
 from django.core.validators import RegexValidator, MinLengthValidator, MaxLengthValidator
 
-TEAM_CHOICES = (("Refs", "Referees"),
-                ("Hamburg", "Hamburg Werewolfs"),
-                ("Bremen", "Portkeys Bremen"))
+TEAM_CHOICES = (("25_Rare", "Rare"),
+                ("24_Ref", "Referee"),
+                ("22_Volunteer", "Volunteer"),
+                ("04_Austria", "Austria"),
+                ("18_Belgium", "Belgium"),
+                ("05_Catalonia", "Catalonia"),
+                ("21_Comittee", "Comittee"),
+                ("06_Czech", "Czech Republik"),
+                ("19_Denmark", "Denmark"),
+                ("07_Finland", "Finland"),
+                ("03_France", "France"),
+                ("02_Germany", "Germany"),
+                ("08_Ireland", "Ireland"),
+                ("09_Italy", "Italy"),
+                ("17_Netherlands", "Netherlands"),
+                ("01_Norway", "Norway"),
+                ("10_Poland", "Poland"),
+                ("16_Scotland", "Scotland"),gitr
+                ("20_Slovakia", "Slovakia"),
+                ("11_Slovenia", "Slovenia"),
+                ("23_Snitch", "Snitch"),
+                ("12_Spain", "Spain"),
+                ("13_Switzerland", "Switzerland"),
+                ("14_Turkey", "Turkey"),
+                ("15_UK", "UK"))
 
 POSITION_CHOICES = (("Keeper", "Keeper"),
                     ("Chaser", "Chaser"),
@@ -83,6 +105,10 @@ class CardForm(Form):
     phrase = forms.CharField(widget=forms.Textarea, max_length=100, help_text="Recommend below 56 characters")
     copy = forms.CharField(label='Copyright', help_text='Give credit, if the photographer wants it.', max_length=50, required=False)
     position = forms.MultipleChoiceField(choices=POSITION_CHOICES, required=False, help_text='Max. 3 positions, if all choose utility; choose multiple by holding Ctrl./Strg.')
-    func = forms.MultipleChoiceField(choices=FUNCTION_CHOICES, required=False,
-                                         help_text='Max. 3 functions; choose multiple by holding Ctrl./Strg.')
+    # func = forms.MultipleChoiceField(choices=FUNCTION_CHOICES, required=False,
+    #                                      help_text='Max. 3 functions; choose multiple by holding Ctrl./Strg.')
+    cata = forms.IntegerField(label='Kilometers traveled to Bamberg', min_value=0, max_value=9999)
+    catb = forms.IntegerField(label='Sunburn Resistance (0-10)', min_value=-5, max_value=20)
+    catc = forms.IntegerField(label='Traded Jerseys', min_value=0, max_value=999)
+    catd = forms.IntegerField(label='Years of Quidditch', min_value=0, max_value=20)
     image = ImageDataField(widget=forms.HiddenInput)

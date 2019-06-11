@@ -141,7 +141,30 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 104857600
 
 # Teamnames
 TEAMNAMES = {
-    'Refs': 'Referees',
-    'Hamburg': 'Hamburg Werewolfs',
-    'Bremen': 'Portkeys Bremen',
+    '25_Rare': 'Rare',
+    '24_Ref': 'Referee',
+    '22_Volunteer': 'Volunteer',
+    '04_Austria': 'Austria',
+    '18_Belgium': 'Belgium',
+    '05_Catalonia': 'Catalonia',
+    '21_Comittee': 'Comittee',
+    '06_Czech': 'Czech Republik',
+    '19_Denmark': 'Denmark',
+    '07_Finland': 'Finland',
+    '03_France': 'France',
+    '02_Germany': 'Germany',
+    '08_Ireland': 'Ireland',
+    '09_Italy': 'Italy',
+    '17_Netherlands': 'Netherlands',
+    '01_Norway': 'Norway',
+    '10_Poland': 'Poland',
+    '16_Scotland': 'Scotland',
+    '20_Slovakia': 'Slovakia',
+    '11_Slovenia': 'Slovenia',
+    '23_Snitch': 'Snitch',
+    '12_Spain': 'Spain',
+    '13_Switzerland': 'Switzerland',
+    '14_Turkey': 'Turkey',
+    '15_UK': 'UK'
 }
+

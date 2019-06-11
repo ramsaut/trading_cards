@@ -4,10 +4,16 @@
 Path           = /home/timo/temp_font/,
 Extension      = .otf,
 Ligatures      = TeX,
-BoldFont       = Myriad_Pro_Bold,
-ItalicFont     = Myriad_Pro_Italic,
-BoldItalicFont = Myriad_Pro_Bold_Italic,
-]{Myriad_Pro_Regular}
+BoldFont       = Dax-Bold,
+ItalicFont     = Dax-Italic,
+BoldItalicFont = Dax-BoldItalic,
+]{Dax-Medium}
+
+\newfontfamily\trebuchet[
+Path           = /home/timo/temp_font/,
+Extension      = .ttf,
+Ligatures      = TeX,
+]{Trebuchet MS Italic}
 
 %\newfontface\condensed{Myriad_Pro_Condensed.otf}
 
@@ -97,6 +103,7 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
 
 \usepackage{graphicx,changepage}
 
+%\usepackage[absolute, overlay,showboxes]{textpos}
 \usepackage[absolute, overlay]{textpos}
 
 \usepackage{tikz}
@@ -108,126 +115,200 @@ BoldItalicFont = Myriad_Pro_Bold_Italic,
 \usepackage{rotating}
 \usepackage{etoolbox}
 
+\newcommand{\copyrightname}{Dax Regular 5}
+\newcommand{\overlay}{02_Germany} %Refs, Hamburg
+\newcommand{\teamname}{Refs} %Refs, Hamburg
+\newcommand{\playername}{Kai Haugen Shaw}
+\newcommand{\playernumber}{79}
+\newcommand{\position}{Chaser/Keeper/Seeker}
 
-\newcommand{\copyrightname}{Van Klaren Van Klaren}
-\newcommand{\overlay}{Refs} %Refs, Hamburg
-\newcommand{\teamname}{Referee} %Refs, Hamburg
-\newcommand{\playername}{BOLD CAPS 16 PT}
-\newcommand{\playernumber}{90}
-\newcommand{\position}{Regular 8 Punkt}
-\newcommand{\motto}{Bold Italic linksbündig mit einer Schriftgröße von 6 Punkt und einem Zeilenabstand von 9 Punkt}
-\newcommand{\function}{Bold 8 Punkt}
-\newcommand{\backgroundimage}{example-grid-100x100pt}
+%\newcommand{\motto}{Short text}
+\newcommand{\motto}{Long enough for two lines text}
+%\newcommand{\motto}{Ebis iducient et at qui aut ent omnienis esacilib usdaerchit optaque}
+%\newcommand{\motto}{Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.}
+\newcommand{\cata}{11}
+\newcommand{\catb}{12}
+\newcommand{\catc}{13}
+\newcommand{\catd}{14}
+\newcommand{\backgroundimage}{examples/test}
+\definecolor{positioncolor}{cmyk}{1,0.615,0,0.592}
+\definecolor{namecolor}{cmyk}{0,0,0,0}
 
-\usepackage[paperheight=98.9mm,paperwidth=73.5mm,top=0in,bottom=0in,right=0in,left=0in]{geometry}
+\usepackage[paperheight=96mm,paperwidth=66mm,top=0in,bottom=0in,right=0in,left=0in]{geometry}
 
-\backgroundsetup{
-	scale=1,
-	color=black,
-	opacity=1,
-	angle=0,
-	contents={%
-		\includegraphics[width=\paperwidth,height=\paperheight]{\backgroundimage}
-	}%
-}
+%\backgroundsetup{
+%	scale=1,
+%	color=black,
+%	opacity=1,
+%	angle=0,
+%	contents={%
+%		\includegraphics[width=\paperwidth,height=\paperheight]{\backgroundimage}
+%	}%
+%}
 
 \usetikzlibrary{fadings}
+\usetikzlibrary{shapes.misc, positioning}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes.symbols}
 
 \begin{document}
 \raggedright
 \color{white}
 
 % Team
-\begin{textblock*}{39mm}(7.3mm,10.5mm)
-	\noindent \fontsize{8}{8} \selectfont\textbf{\teamname}
-\end{textblock*}
+%\begin{textblock*}{39mm}(7.3mm,16mm)
+%	\noindent \fontsize{8}{8} \color{positioncolor}\selectfont\teamname
+%\end{textblock*}
 
 \newlength{\originalhight}
 \newlength{\originallength}
 \newlength{\perfecthight}
-\setlength{\perfecthight}{12.6737pt}
+\setlength{\perfecthight}{10pt}
 \newlength{\maxlength}
-\setlength{\maxlength}{50mm}
-\settoheight{\originalhight}{\settowidth{\originallength}{\noindent \fontsize{16}{16} \selectfont\textbf{\MakeUppercase{\playername}}}
+\setlength{\maxlength}{40mm}
+\settoheight{\originalhight}{\noindent \fontsize{10}{10} \selectfont{\MakeUppercase{\playername}}
 		\ifdim \originallength > \maxlength
-		\resizebox{\maxlength}{!}{\noindent \fontsize{16}{16} \selectfont\textbf{\MakeUppercase{\playername}}}
+		\resizebox{\maxlength}{!}{\noindent \fontsize{10}{10} \selectfont{\MakeUppercase{\playername}}}
 		\else
-		\noindent \fontsize{16}{16} \selectfont\textbf{\MakeUppercase{\playername}}
+		\noindent \fontsize{10}{10} \selectfont{\MakeUppercase{\playername}}
 		\fi}
 
-\begin{textblock*}{55mm}(7.5mm,64.78mm + \perfecthight - \originalhight)
-	\settowidth{\originallength}{\noindent \fontsize{16}{16} \selectfont\textbf{\MakeUppercase{\playername}}}
+\begin{textblock*}{40mm}(5.5mm, 8.5mm + \perfecthight - \originalhight)
+	\settowidth{\originallength}{\noindent \fontsize{10}{10} \selectfont\textbf{\color{namecolor}\MakeUppercase{\playername}}}
 	\ifdim \originallength > \maxlength
-		\resizebox{\maxlength}{!}{\noindent \fontsize{16}{16} \selectfont\textbf{\MakeUppercase{\playername}}}
+		\resizebox{\maxlength}{!}{\noindent \fontsize{10}{10} \selectfont\textbf{\color{namecolor}\MakeUppercase{\playername}}}
 	\else
-		\noindent \fontsize{16}{16} \selectfont\textbf{\MakeUppercase{\playername}}
+		\noindent \fontsize{10}{10} \selectfont\textbf{\color{namecolor}\MakeUppercase{\playername}}
 	\fi
 \end{textblock*}
 
 % Position
-\begin{textblock*}{40mm}(7.68mm,71.09mm)
-	\noindent \fontsize{9}{9} \selectfont \position
+\begin{textblock*}{30mm}(5.5mm,14.9mm)
+	\noindent \fontsize{8}{8} \selectfont {\color{positioncolor}\position}
+\end{textblock*}
+
+% CATA
+\begin{textblock*}{13mm}(5.3mm,34.3mm)
+	\noindent \fontsize{11}{11} \trebuchet {\cata}
+\end{textblock*}
+% CATB
+\begin{textblock*}{11mm}(5.3mm,46mm)
+	\noindent \fontsize{11}{11} \trebuchet {\catb}
+\end{textblock*}
+% CATC
+\begin{textblock*}{10mm}(5.3mm,57.5mm)
+	\noindent \fontsize{11}{11} \trebuchet {\catc}
+\end{textblock*}
+% CATD
+\begin{textblock*}{11mm}(5.3mm,69mm)
+	\noindent \fontsize{11}{11} \trebuchet {\catd}
+\end{textblock*}
+
+% Number
+\begin{textblock*}{12mm}(5.3mm,84mm)
+	\noindent \fontsize{18}{18} \trebuchet {\#\playernumber}
 \end{textblock*}
 
 % Spruch
 \newlength{\maxhight}
-\setlength{\maxhight}{5.0mm}
+\setlength{\maxhight}{7.0mm}
+\newlength{\boxwidth}
 \settoheight{\originalhight}{\parbox{36mm}{
-	\fontsize{10}{12} \selectfont \textit{\textbf{\motto}}}}
-\begin{textblock*}{36mm}(29.21mm,76.855mm)
+	\fontsize{10}{12} \selectfont \centering \motto}}
+\settowidth{\boxwidth}{\fontsize{10}{12} \selectfont \centering \motto}
+\newlength{\maxboxwidth}
+\setlength{\maxboxwidth}{34mm}
+\begin{textblock*}{\maxboxwidth}(22mm,78mm)
 	\raggedright
 \ifdim \originalhight > \maxhight%
-	\begin{fitbox}{36mm}{\maxhight}\raggedright
-		\selectfont \textit{\textbf{\motto}}
-	\end{fitbox}
+\begin{tikzpicture}[overlay]
+\draw [opacity=0,
+blur shadow={shadow blur steps=5,shadow blur radius=5pt,shadow blur extra rounding=8pt,shadow opacity=10,shadow xshift=-4pt,shadow yshift=0}
+] (3.7,0.2) rectangle (-0.2,-1.2);
+\end{tikzpicture}
+\begin{fitbox}{\maxboxwidth}{\maxhight}
+	\selectfont \centering \motto
+\end{fitbox}
+
+	
 \else%
-	\raggedright\parbox{36mm}{\raggedright\fontsize{10}{12} \selectfont  \textit{\textbf{\motto}}}
+	\ifdim \boxwidth > \maxboxwidth%
+	\begin{tikzpicture}
+		\node (1) [
+		blur shadow={shadow blur steps=5,shadow blur radius=5pt,shadow blur extra rounding=8pt,shadow opacity=10,shadow xshift=-4pt,shadow yshift=0}
+		      ] {\parbox{\maxboxwidth}{\fontsize{10}{12} \selectfont \centering \motto}};
+	\end{tikzpicture}
+	\else%
+	\parbox{\maxboxwidth}{\centering
+	\begin{tikzpicture}
+	\node (1) [
+	blur shadow={shadow blur steps=5,shadow blur radius=5pt, shadow blur extra rounding=8pt,shadow opacity=10,shadow xshift=-4pt,shadow yshift=0}
+	] {\fontsize{10}{12} \selectfont \motto};
+	\end{tikzpicture}}
+	\fi%
 \fi%
 \end{textblock*}
 
 % Function
-\begin{textblock*}{57mm}(7.62mm,88mm)
-	\noindent \fontsize{8}{8} \selectfont\textbf{\function}
-\end{textblock*}
+%\begin{textblock*}{57mm}(7.62mm,88mm)
+%	\noindent \fontsize{8}{8} \selectfont\textbf{\function}
+%\end{textblock*}
 
 % Copyright
 \newlength{\unturnedhight}
-\settoheight{\unturnedhight}{\parbox{2000mm}{\fontsize{6}{6} \selectfont\copyright \copyrightname}}
-
+\settoheight{\unturnedhight}{\fontsize{5}{5} \selectfont\copyright \copyrightname}
+\newlength{\lencopy}
+\settowidth{\lencopy}{\fontsize{5}{5} \selectfont\copyright \copyrightname}
 \ifdefempty{\copyrightname}{}{
-\begin{textblock*}{800mm}(10mm-\unturnedhight,17mm)
-	\begin{turn}{-90}
+\begin{textblock*}{800mm}(58.7mm+\unturnedhight,90mm-\lencopy)
+	\begin{turn}{90}
 	\noindent \fontsize{5}{5} \selectfont\copyright\ \copyrightname
 	\end{turn}
 \end{textblock*}
 }
 
-% Background
+
+% Picture
 \begin{tikzpicture}[remember picture, overlay]
-\noindent\node[inner sep=0pt] at (current page.center) {%
-	\noindent\includegraphics[width=\paperwidth,height=1\paperheight]{overlays/\overlay_1}%
-};%
-\end{tikzpicture}
-% Background multiply
-\begin{tikzpicture}[remember picture, overlay, blend mode=multiply]
-\noindent\node[inner sep=0pt] at (current page.center) {%
-	\noindent\includegraphics[width=\paperwidth,height=1\paperheight]{overlays/\overlay_2}%
+\noindent\node[inner sep=0pt] at (4.075,-4.45) {%
+	\noindent\includegraphics[height=1\paperheight]{\backgroundimage}%
 };%
 \end{tikzpicture}
 
+% Background
+\begin{tikzpicture}[remember picture, overlay]
+\noindent\node[inner sep=0pt] at (current page.center) {%
+	\noindent\includegraphics[width=\paperwidth,height=1\paperheight]{overlays/\overlay}%
+};%
+\end{tikzpicture}
+
+% Background multiply
+%\begin{tikzpicture}[remember picture, overlay, blend mode=multiply]
+%\noindent\node[inner sep=0pt] at (current page.center) {%
+%	\noindent\includegraphics[width=\paperwidth,height=1\paperheight]{shadow}%
+%};%
+%\end{tikzpicture}
+
+
 % Number
-\ifdefempty{\playernumber}{
-	\begin{tikzpicture}[remember picture, overlay]
-        \noindent\node[inner sep=0pt] at (current page.center) {%
-            \noindent\includegraphics[width=\paperwidth,height=1\paperheight]{numbers/None}%
-        };%
-        \end{tikzpicture}
-	}{
-        \begin{tikzpicture}[remember picture, overlay]
-        \noindent\node[inner sep=0pt] at (4.15,-4.4) {%
-            \noindent\includegraphics[]{numbers/\playernumber}%
-        };%
-        \end{tikzpicture}
-}
+%\ifdefempty{\playernumber}{
+%	\begin{tikzpicture}[remember picture, overlay]
+%        \noindent\node[inner sep=0pt] at (current page.center) {%
+%            \noindent\includegraphics[width=\paperwidth,height=1\paperheight]{numbers/None}%
+%        };%
+%        \end{tikzpicture}
+%	}{
+%        \begin{tikzpicture}[remember picture, overlay]
+%        \noindent\node[inner sep=0pt] at (4.15,-4.4) {%
+%            \noindent\includegraphics[]{numbers/\playernumber}%
+%        };%
+%        \end{tikzpicture}
+%}
+
+%\begin{tikzpicture}[remember picture, overlay]
+%\noindent\node[inner sep=0pt] at (current page.center) {%
+%	\noindent\includegraphics[width=\paperwidth,height=1\paperheight]{example}%
+%};%
+%\end{tikzpicture}
 
 \end{document}
