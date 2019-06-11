@@ -35,7 +35,7 @@
       });
       $modal.on('shown.bs.modal', function () {
         cropper = new Cropper(image, {
-          aspectRatio: 868/1168,
+          aspectRatio: 795/1512,
           viewMode: 2
         });
       }).on('hidden.bs.modal', function () {
@@ -48,7 +48,7 @@
         if (cropper) {
           canvas = cropper.getCroppedCanvas();
           var HERMITE = new Hermite_class();
-          HERMITE.resample_single(canvas,868,1168, true);
+          HERMITE.resample_single(canvas,795,1512, true);
 
           avatar.src = canvas.toDataURL();
           $progress.show();

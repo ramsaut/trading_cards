@@ -62,16 +62,18 @@ class DefaultFormsetView(FormView):
                               "-synctex=1", "-interaction=nonstopmode",
                               (r'\def\copyrightname{{{}}}\def\overlay{{{}}}\def\teamname{{{}}}\def\backgroundimage{{{}}}' +
                               r'\def\playername{{{}}}\def\playernumber{{{}}}\def\position{{{}}}' +
-                              r'\def\motto{{{}}}\def\function{{{}}}\input{{document}}').format(
+                              r'\def\motto{{{}}}'
+                              r'\def\cata{{{}}}\def\catb{{{}}}\def\catc{{{}}}\def\catd{{{}}}'
+                              r'\input{{document}}').format(
                                   latexCleanText(d['copy']),
                                   d['team'],  # Overlay
                                   settings.TEAMNAMES[d['team']],  # actual name
                                   d['image'].name,
                                   latexCleanText(d['name']),
                                   latexCleanText(d['number']),
-                                  latexCleanText(', '.join(d['position'])),
+                                  latexCleanText('/'.join(d['position'])),
                                   latexCleanText(d['phrase']),
-                                  ', '.join(d['func']))]
+                                  d['cata'], d['catb'], d['catc'], d['catd'])]
         p = subprocess.Popen(xelatexCommand,
                              cwd=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'latex'))
         p.wait()
