@@ -23,7 +23,7 @@ TEAM_CHOICES = (("25_Rare", "Rare"),
                 ("17_Netherlands", "Netherlands"),
                 ("01_Norway", "Norway"),
                 ("10_Poland", "Poland"),
-                ("16_Scotland", "Scotland"),gitr
+                ("16_Scotland", "Scotland"),
                 ("20_Slovakia", "Slovakia"),
                 ("11_Slovenia", "Slovenia"),
                 ("23_Snitch", "Snitch"),
