@@ -66,4 +66,34 @@
           });
         }
       });
+      $('#id_cata').removeAttr('required');
+      $('#id_cata').parent().hide()
+      $('#id_catb').removeAttr('required');
+      $('#id_catb').parent().hide()
+      $('#id_catc').removeAttr('required');
+      $('#id_catc').parent().hide()
+      $('#id_catd').removeAttr('required');
+      $('#id_catd').parent().hide()
+      $("#id_team").change(function () {
+        var team = this.value;
+        if(team == '25_Rare') {
+            $('#id_cata').removeAttr('required');
+            $('#id_cata').parent().hide()
+            $('#id_catb').removeAttr('required');
+            $('#id_catb').parent().hide()
+            $('#id_catc').removeAttr('required');
+            $('#id_catc').parent().hide()
+            $('#id_catd').removeAttr('required');
+            $('#id_catd').parent().hide()
+        } else {
+            $('#id_cata').attr('required', '');
+            $('#id_cata').parent().show()
+            $('#id_catb').attr('required', '');
+            $('#id_catb').parent().show()
+            $('#id_catc').attr('required', '');
+            $('#id_catc').parent().show()
+            $('#id_catd').attr('required', '');
+            $('#id_catd').parent().show()
+        }
+      });
     });
