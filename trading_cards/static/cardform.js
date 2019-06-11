@@ -67,33 +67,41 @@
         }
       });
       $('#id_cata').removeAttr('required');
-      $('#id_cata').parent().hide()
+      $('#id_cata').parent().hide();
       $('#id_catb').removeAttr('required');
-      $('#id_catb').parent().hide()
+      $('#id_catb').parent().hide();
       $('#id_catc').removeAttr('required');
-      $('#id_catc').parent().hide()
+      $('#id_catc').parent().hide();
       $('#id_catd').removeAttr('required');
-      $('#id_catd').parent().hide()
+      $('#id_catd').parent().hide();
+      $('#id_number').parent().hide();
       $("#id_team").change(function () {
         var team = this.value;
         if(team == '25_Rare') {
             $('#id_cata').removeAttr('required');
-            $('#id_cata').parent().hide()
+            $('#id_cata').parent().hide();
             $('#id_catb').removeAttr('required');
-            $('#id_catb').parent().hide()
+            $('#id_catb').parent().hide();
             $('#id_catc').removeAttr('required');
-            $('#id_catc').parent().hide()
+            $('#id_catc').parent().hide();
             $('#id_catd').removeAttr('required');
-            $('#id_catd').parent().hide()
+            $('#id_catd').parent().hide();
         } else {
             $('#id_cata').attr('required', '');
-            $('#id_cata').parent().show()
+            $('#id_cata').parent().show();
             $('#id_catb').attr('required', '');
-            $('#id_catb').parent().show()
+            $('#id_catb').parent().show();
             $('#id_catc').attr('required', '');
-            $('#id_catc').parent().show()
+            $('#id_catc').parent().show();
             $('#id_catd').attr('required', '');
-            $('#id_catd').parent().show()
+            $('#id_catd').parent().show();
+        }
+        if(team == '25_Rare' || team == '24_Ref' || team == '23_Snitch' || team == '22_Volunteer' || team == '21_Committee') {
+            $('#id_number').removeAttr('required');
+            $('#id_number').parent().hide();
+        } else {
+            $('#id_number').attr('required', '');
+            $('#id_number').parent().show();
         }
       });
     });

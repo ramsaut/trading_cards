@@ -209,10 +209,11 @@ Ligatures      = TeX,
 \end{textblock*}
 
 % Number
+\ifdefempty{\playernumber}{}{
 \begin{textblock*}{12mm}(5.3mm,84mm)
 	\noindent \fontsize{18}{18} \trebuchet {\#\playernumber}
 \end{textblock*}
-
+}
 % Spruch
 \ifdefempty{\motto}{}{
 \newlength{\maxhight}

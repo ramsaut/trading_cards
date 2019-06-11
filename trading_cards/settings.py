@@ -143,12 +143,13 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 104857600
 TEAMNAMES = {
     '25_Rare': 'Rare',
     '24_Ref': 'Referee',
+    '23_Snitch': 'Snitch',
     '22_Volunteer': 'Volunteer',
+    '21_Committee': 'Committee',
     '04_Austria': 'Austria',
     '18_Belgium': 'Belgium',
     '05_Catalonia': 'Catalonia',
-    '21_Comittee': 'Comittee',
-    '06_Czech': 'Czech Republik',
+    '06_Czech': 'Czech Republic',
     '19_Denmark': 'Denmark',
     '07_Finland': 'Finland',
     '03_France': 'France',
@@ -161,21 +162,21 @@ TEAMNAMES = {
     '16_Scotland': 'Scotland',
     '20_Slovakia': 'Slovakia',
     '11_Slovenia': 'Slovenia',
-    '23_Snitch': 'Snitch',
     '12_Spain': 'Spain',
     '13_Switzerland': 'Switzerland',
     '14_Turkey': 'Turkey',
-    '15_UK': 'UK'
+    '15_UK': 'UK',
 }
 
 COLOR_NAME = {
     '25_Rare': '0,0,0,0',
     '24_Ref': '0,0,0,0',
+    '23_Snitch': '0,0,0,0',
     '22_Volunteer': '0,0,0,0',
+    '21_Committee': '0,0,0,0',
     '04_Austria': '0,0,0,0',
     '18_Belgium': '0,0,0,0',
     '05_Catalonia': '0, 0.149, 1, 0',
-    '21_Comittee': '0,0,0,0',
     '06_Czech': '0,0,0,0',
     '19_Denmark': '0,0,0,0',
     '07_Finland': '0,0,0,0',
@@ -189,21 +190,21 @@ COLOR_NAME = {
     '16_Scotland': '0,0,0,0',
     '20_Slovakia': '0.932, 0.518, 0, 0.364',
     '11_Slovenia': '1, 0.432, 0, 0.356',
-    '23_Snitch': '0,0,0,0',
     '12_Spain': '0,0,0,0',
     '13_Switzerland': '0,0,0,0',
     '14_Turkey': '0,0,0,0',
-    '15_UK': '0,0,0,0'
+    '15_UK': '0,0,0,0',
 }
 
 COLOR_POSITION = {
     '25_Rare': '0.1283, 1.00, 0.3505, 0.38',
     '24_Ref': '0.8417, 0.6705, 0.4369, 0.4103',
+    '23_Snitch': '0, 58.47, 85.23, 0.01',
     '22_Volunteer': '0.993, 0.9818, 0.1311, 0.02',
+    '21_Committee': '0,0,0,0',
     '04_Austria': '0, 0.827, 0.759, 0.070',
     '18_Belgium': '0, 0, 0, 1',
     '05_Catalonia': '0,0,0,0',
-    '21_Comittee': '0,0,0,0',
     '06_Czech': '0.865, 0.452, 0, 0.505',
     '19_Denmark': '0, 0.939, 0.757, 0.223',
     '07_Finland': '1, 0.564, 0, 0.576',
@@ -217,9 +218,8 @@ COLOR_POSITION = {
     '16_Scotland': '0.994, 0.471, 0, 0.250',
     '20_Slovakia': '0,0,0,0',
     '11_Slovenia': '0,0,0,0',
-    '23_Snitch': '0, 58.47, 85.23, 0.01',
     '12_Spain': '0,0,0,0',
     '13_Switzerland': '0, 0.798, 0.859, 0.16',
     '14_Turkey': '0, 0.955, 0.898, 0.109',
-    '15_UK': '1, 0.712, 0, 0.509'
+    '15_UK': '1, 0.712, 0, 0.509',
 }

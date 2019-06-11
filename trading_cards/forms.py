@@ -8,11 +8,12 @@ from django.core.validators import RegexValidator, MinLengthValidator, MaxLength
 
 TEAM_CHOICES = (("25_Rare", "Rare"),
                 ("24_Ref", "Referee"),
+                ("23_Snitch", "Snitch"),
                 ("22_Volunteer", "Volunteer"),
+                ("21_Committee", "Committee"),
                 ("04_Austria", "Austria"),
                 ("18_Belgium", "Belgium"),
                 ("05_Catalonia", "Catalonia"),
-                ("21_Comittee", "Comittee"),
                 ("06_Czech", "Czech Republic"),
                 ("19_Denmark", "Denmark"),
                 ("07_Finland", "Finland"),
@@ -26,7 +27,6 @@ TEAM_CHOICES = (("25_Rare", "Rare"),
                 ("16_Scotland", "Scotland"),
                 ("20_Slovakia", "Slovakia"),
                 ("11_Slovenia", "Slovenia"),
-                ("23_Snitch", "Snitch"),
                 ("12_Spain", "Spain"),
                 ("13_Switzerland", "Switzerland"),
                 ("14_Turkey", "Turkey"),
@@ -48,7 +48,7 @@ POSITION_CHOICES = (("Keeper", "Keeper"),
                     ("Merchandise", "Merchandise"),
                     ("Live Steam", "Live Stream"),
                     ("Commentator", "Commentator"),
-                    ("Comittee", "Comittee"),
+                    ("Committee", "Committee"),
                     ("Volunteer", "Volunteer"),
                    )
 
@@ -100,9 +100,9 @@ class CardForm(Form):
             MinLengthValidator(1),
             MaxLengthValidator(2),
         ],)
-    phrase = forms.CharField(widget=forms.Textarea, max_length=100, help_text="Recommend below 56 characters", required=False)
+    phrase = forms.CharField(widget=forms.Textarea, max_length=100, help_text="Recommend below 56 characters (optional)", required=False)
     copy = forms.CharField(label='Copyright', help_text='Give credit, if the photographer wants it.', max_length=50, required=False)
-    position = forms.MultipleChoiceField(choices=POSITION_CHOICES, help_text='Max. 3 positions, if all choose utility; choose multiple by holding Ctrl./Strg.')
+    position = forms.MultipleChoiceField(choices=POSITION_CHOICES, help_text='See if multiple positions fit, otherwise maybe chose Utility or drop less important ones; choose multiple by holding Ctrl.')
     # func = forms.MultipleChoiceField(choices=FUNCTION_CHOICES, required=False,
     #                                      help_text='Max. 3 functions; choose multiple by holding Ctrl./Strg.')
     cata = forms.IntegerField(label='Kilometers traveled to Bamberg', min_value=0, max_value=9999, required=False)
