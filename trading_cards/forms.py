@@ -37,22 +37,20 @@ POSITION_CHOICES = (("Keeper", "Keeper"),
                     ("Beater", "Beater"),
                     ("Seeker", "Seeker"),
                     ("Utility", "Utility"),
-                    )
-
-FUNCTION_CHOICES = (("", "None"),
                     ("Speaking Captain", "Speaking Captain"),
                     ("Coach", "Coach"),
                     ("Team Captain", "Team Captain"),
                     ("Head Referee", "Head Referee"),
                     ("Assistant Referee", "Assistant Referee"),
                     ("Snitch Referee", "Snitch Referee"),
+                    ("Snitch Runner", "Snitch Runner"),
                     ("Pitch Manager", "Pitch Manager"),
-                    ("Runner", "Runner"),
                     ("Merchandise", "Merchandise"),
                     ("Live Steam", "Live Stream"),
                     ("Commentator", "Commentator"),
                     ("Committee", "Committee"),
-                    )
+                    ("Volunteer", "Volunteer"),
+                   )
 
 
 class ImageDataField(forms.ImageField):
@@ -102,7 +100,7 @@ class CardForm(Form):
             MinLengthValidator(1),
             MaxLengthValidator(2),
         ],)
-    phrase = forms.CharField(widget=forms.Textarea, max_length=100, help_text="Recommend below 56 characters")
+    phrase = forms.CharField(widget=forms.Textarea, max_length=100, help_text="Recommend below 56 characters", required=False)
     copy = forms.CharField(label='Copyright', help_text='Give credit, if the photographer wants it.', max_length=50, required=False)
     position = forms.MultipleChoiceField(choices=POSITION_CHOICES, required=False, help_text='Max. 3 positions, if all choose utility; choose multiple by holding Ctrl./Strg.')
     # func = forms.MultipleChoiceField(choices=FUNCTION_CHOICES, required=False,

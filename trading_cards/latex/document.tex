@@ -1,7 +1,7 @@
 \documentclass[]{article}
 \usepackage{fontspec}
 \setmainfont[
-Path           = /home/timo/temp_font/,
+Path           = /var/www/trading_cards/fonts/,
 Extension      = .otf,
 Ligatures      = TeX,
 BoldFont       = Dax-Bold,
@@ -10,10 +10,10 @@ BoldItalicFont = Dax-BoldItalic,
 ]{Dax-Medium}
 
 \newfontfamily\trebuchet[
-Path           = /home/timo/temp_font/,
+Path           = /var/www/trading_cards/fonts/,
 Extension      = .ttf,
 Ligatures      = TeX,
-]{Trebuchet MS Italic}
+]{Trebuchet MS Bold Italic}
 
 %\newfontface\condensed{Myriad_Pro_Condensed.otf}
 
@@ -30,7 +30,7 @@ Ligatures      = TeX,
 
 
 \usepackage{environ}% http://ctan.org/pkg/environ
-\usepackage{lipsum}% http://ctan.org/pkg/lipsum
+%\usepackage{lipsum}% http://ctan.org/pkg/lipsum
 \newdimen\fontdim
 \newdimen\upperfontdim
 \newdimen\lowerfontdim
@@ -115,24 +115,24 @@ Ligatures      = TeX,
 \usepackage{rotating}
 \usepackage{etoolbox}
 
-\newcommand{\copyrightname}{Dax Regular 5}
-\newcommand{\overlay}{02_Germany} %Refs, Hamburg
-\newcommand{\teamname}{Refs} %Refs, Hamburg
-\newcommand{\playername}{Kai Haugen Shaw}
-\newcommand{\playernumber}{79}
-\newcommand{\position}{Chaser/Keeper/Seeker}
+%\newcommand{\copyrightname}{Dax Regular 5}
+%\newcommand{\overlay}{02_Germany} %Refs, Hamburg
+%\newcommand{\teamname}{Refs} %Refs, Hamburg
+%\newcommand{\playername}{Kai Haugen Shaw}
+%\newcommand{\playernumber}{79}
+%\newcommand{\position}{Chaser/Keeper/Seeker}
 
 %\newcommand{\motto}{Short text}
-\newcommand{\motto}{Long enough for two lines text}
+%\newcommand{\motto}{Long enough for two lines text}
 %\newcommand{\motto}{Ebis iducient et at qui aut ent omnienis esacilib usdaerchit optaque}
 %\newcommand{\motto}{Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.}
-\newcommand{\cata}{11}
-\newcommand{\catb}{12}
-\newcommand{\catc}{13}
-\newcommand{\catd}{14}
-\newcommand{\backgroundimage}{examples/test}
-\definecolor{positioncolor}{cmyk}{1,0.615,0,0.592}
-\definecolor{namecolor}{cmyk}{0,0,0,0}
+%\newcommand{\cata}{11}
+%\newcommand{\catb}{12}
+%\newcommand{\catc}{13}
+%\newcommand{\catd}{14}
+%\newcommand{\backgroundimage}{examples/test}
+%\definecolor{positioncolor}{cmyk}{1,0.615,0,0.592}
+%\definecolor{namecolor}{cmyk}{0,0,0,0}
 
 \usepackage[paperheight=96mm,paperwidth=66mm,top=0in,bottom=0in,right=0in,left=0in]{geometry}
 
